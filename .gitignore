@@ -2,3 +2,4 @@ data/protein2text*
 results/protein2text*
 checkpoints/*
 **/__pycache__/
+*.egg-info

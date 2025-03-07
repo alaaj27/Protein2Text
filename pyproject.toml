@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "protein2text"
+version = "1.0.0"
+description = "A model for generating text from protein sequences."
+readme = "README.md"
+requires-python = ">=3.8"
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: Apache Software License",
+]
+
+dependencies = [
+    "torch>=2.1.2",
+    "transformers==4.43.1",
+    "tokenizers>=0.15.1",
+    "sentencepiece>=0.1.99",
+    "numpy",
+    "pydantic",
+    "scikit-learn>=1.2.2",
+    "requests",
+    "httpx>=0.24.0",
+    "peft==0.13.0",
+    "accelerate==0.34.2",
+    "einops_exts==0.0.4",
+    "einops==0.6.1"
+]
+
+[project.optional-dependencies]
+dev = ["pytest", "black", "flake8"]
+
+[project.urls]
+"Homepage" = "https://github.com/alaaj27/Protein2Text"
+"Bug Tracker" = "https://github.com/alaaj27/Protein2Text/issues"
+
+[tool.setuptools.packages.find]
+exclude = ["assets*", "docs", "dist*", "scripts*", "tests*"]
+
+[tool.wheel]
+exclude = ["assets*", "docs", "dist*", "scripts*", "tests*"]

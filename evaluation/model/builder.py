@@ -6,7 +6,7 @@ import torch
 from evaluation.model import *
 from evaluation.constants import DEFAULT_PROT_START_TOKEN, DEFAULT_PROT_END_TOKEN, PROTEIN_SEQUENCE_TOKEN_INDEX
 from .gated_cross_attention.GCA import build_gca_components
-from llava.model.language_model.llava_llama import LlavaConfig
+from evaluation.model.language_model.llava_llama import LlavaConfig
 
 class CustomConfig:
     def __init__(self, **kwargs):
@@ -35,7 +35,7 @@ def load_pretrained_model(model_path, model_base, model_name,
         kwargs['attn_implementation'] = 'flash_attention_2'
 
     if 'protein2text' in model_name.lower():
-        
+
         if model_base is None:
             raise ValueError('There is `lora` in model name but no `model_base` is provided. If you are loading a LoRA model, please provide the `model_base` argument.')
         
