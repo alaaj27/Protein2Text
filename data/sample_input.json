@@ -1,0 +1,73 @@
+[
+    {
+        "long_format_id": "Q9H9D4_3",
+        "id": "Q9H9D4",
+        "protein": "Zinc finger protein 408",
+        "pmc_id": [
+            "PMC10492493",
+            "PMC3683717"
+        ],
+        "amino_seq": "MEEAEELLLEGKKALQLAREPRLGLDLGWNPSGEGCTQGLKDVPPEPTRDILALKSLPRGLALGPSLAKEQRLGVWCVGDPLQPGLLWGPLEEESASKEKGEGVKPRQEENLSLGPWGDVCACEQSSGWTSLVQRGRLESEGNVAPVRISERLHLQVYQLVLPGSELLLWPQPSSEGPSLTQPGLDKEAAVAVVTEVESAVQQEVASPGEDAAEPCIDPGSQSPSGIQAENMVSPGLKFPTQDRISKDSQPLGPLLQDGDVDEECPAQAQMPPELQSNSATQQDPDGSGASFSSSARGTQPHGYLAKKLHSPSDQCPPRAKTPEPGAQQSGFPTLSRSPPGPAGSSPKQGRRYRCGECGKAFLQLCHLKKHAFVHTGHKPFLCTECGKSYSSEESFKAHMLGHRGVRPFPCPQCDKAYGTQRDLKEHQVVHSGARPFACDQCGKAFARRPSLRLHRKTHQVPAAPAPCPCPVCGRPLANQGSLRNHMRLHTGEKPFLCPHCGRAFRQRGNLRGHLRLHTGERPYRCPHCADAFPQLPELRRHLISHTGEAHLCPVCGKALRDPHTLRAHERLHSGERPFPCPQCGRAYTLATKLRRHLKSHLEDKPYRCPTCGMGYTLPQSLRRHQLSHRPEAPCSPPSVPSAASEPTVVLLQAEPQLLDTHREEEVSPARDVVEVTISESQEKCFVVPEEPDAAPSLVLIHKDMGLGAWAEVVEVEMGT",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<protein_sequence>\nCan a protein's genotype and phenotype be directly related?"
+            },
+            {
+                "from": "gpt",
+                "value": "No, in patients with this protein-related condition, phenotype and genotype do not necessarily display a direct one-to-one relationship."
+            }
+        ]
+    },
+    {
+        "long_format_id": "Q9Y5R6_32",
+        "id": "Q9Y5R6",
+        "protein": "Doublesex- and mab-3-related transcription factor 1",
+        "pmc_id": [
+            "PMC10671459",
+            "PMC10266359",
+            "PMC8063244",
+            "PMC8193266",
+            "PMC10919652",
+            "PMC8909180",
+            "PMC7958228",
+            "PMC10266946",
+            "PMC8359552",
+            "PMC9598223"
+        ],
+        "amino_seq": "MPNDEAFSKPSTPSEAPHAPGVPPQGRAGGFGKASGALVGAASGSSAGGSSRGGGSGSGASDLGAGSKKSPRLPKCARCRNHGYASPLKGHKRFCMWRDCQCKKCNLIAERQRVMAAQVALRRQQAQEEELGISHPIPLPSAAELLVKRENNGSNPCLMTECSGTSQPPPASVPTTAASEGRMVIQDIPAVTSRGHVENTPDLVSDSTYYSSFYQPSLFPYYNNLYNCPQYSMALAADSASGEVGNPLGGSPVKNSLRGLPGPYVPGQTGNQWQMKNMENRHAMSSQYRMHSYYPPPSYLGQSVPQFFTFEDAPSYPEARASVFSPPSSQDSGLVSLSSSSPISNKSTKAVLECEPASEPSSFTVTPVIEEDE",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<protein_sequence>\nCan the protein influence the development of gonads in chickens?"
+            },
+           {
+                "from": "gpt",
+                "value": "Yes, disruption of the protein in early male chicken development induced gonad feminization."
+            }
+        ]
+    },
+    {
+        "long_format_id": "Q9HC52_27",
+        "id": "Q9HC52",
+        "protein": "Chromobox protein homolog 8",
+        "pmc_id": [
+            "PMC9259798",
+            "PMC7666318",
+            "PMC9259361",
+            "PMC6916084"
+        ],
+        "amino_seq": "MELSAVGERVFAAEALLKRRIRKGRMEYLVKWKGWSQKYSTWEPEENILDARLLAAFEEREREMELYGPKKRGPKPKTFLLKAQAKAKAKTYEFRSDSARGIRIPYPGRSPQDLASTSRAREGLRNMGLSPPASSTSTSSTCRAEAPRDRDRDRDRDRERDRERERERERERERERERERGTSRVDDKPSSPGDSSKKRGPKPRKELPDPSQRPLGEPSAGLGEYLKGRKLDDTPSGAGKFPAGHSVIQLARRQDSDLVQCGVTSPSSAEATGKLAVDTFPARVIKHRAAFLEAKGQGALDPNGTRVRHGSGPPSSGGGLYRDMGAQGGRPSLIARIPVARILGDPEEESWSPSLTNLEKVVVTDVTSNFLTVTIKESNTDQGFFKEKR",
+        "conversations": [
+            {
+                "from": "human",
+                "value": "<protein_sequence>\nWhat is the significance of investigating this protein\\'s expression in cancers like liver hepatocellular carcinoma, kidney renal clear cell carcinoma, and ovarian cancer?"
+            },
+            {
+                "from": "gpt",
+                "value": "It is critical to investigate this protein\\"
+            }
+        ]
+    }
+
+]
