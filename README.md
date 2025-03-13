@@ -105,7 +105,7 @@ pip install -e . -->
 # please try running the command below (without #)
 # pip install flash-attn --no-build-isolation --no-cache-dir
 ``` -->
-
+<!-- 
 ### Quick Start With HuggingFace
 
 <details>
@@ -153,7 +153,7 @@ eval_model(args)
 </details>
 
 ## LLaVA Weights
-Please check out our [Model Zoo](https://github.com/haotian-liu/LLaVA/blob/main/docs/MODEL_ZOO.md) for all public LLaVA checkpoints, and the instructions of how to use the weights.
+Please check out our [Model Zoo](https://github.com/haotian-liu/LLaVA/blob/main/docs/MODEL_ZOO.md) for all public LLaVA checkpoints, and the instructions of how to use the weights. -->
 
 
 ## Train
