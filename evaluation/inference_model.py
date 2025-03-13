@@ -60,8 +60,6 @@ def protein_sequence_tokenizer(prompt, tokenizer, protein_sequence_token_index=P
 
 
 
-
-
 def eval_model(args, model, tokenizer):
     qs = DEFAULT_PROTEIN_SEQUENCE_TOKEN + "\n" + args.query
     conv = conv_templates[args.conv_mode].copy()
