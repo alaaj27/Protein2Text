@@ -1,9 +1,17 @@
 
 # [NAACL 2025] Protein2Text: Resampling Mechanism to Translate Protein Sequences into Human-Interpretable Text
-## **📌 Introduction**  
+## **📌 Introduction**
+
+<div align=center><img src="figures/Archi.png" width="100%" height="100%" /></div>
+
 Proteins are fundamental to biological processes, yet **99.7% of the 227 million known protein sequences remain uncharacterized** due to experimental limitations. **Protein2Text** is a **multimodal large language model** designed to bridge this gap by **interpreting protein sequences** and **generating informative text-based answers** to open-ended scientific questions.  
 
 Built on an **adapted LLaVA framework** with an advanced **resampling mechanism**, Protein2Text effectively translates protein sequences into a language-compatible space, allowing it to **handle diverse and complex biological queries**.  
+
+
+
+
+
 
 ## **🚀 Features**  
 ✔ **Multimodal Capability**: Interprets protein sequences and generates textual insights.  
@@ -33,11 +41,9 @@ Protein2Text has been **rigorously evaluated** using multiple benchmarks and has
 
 ## Contents
 - [Install](#install)
-- [LLaVA Weights](#llava-weights)
-- [Demo](#Demo)
-- [Model Zoo](https://github.com/haotian-liu/LLaVA/blob/main/docs/MODEL_ZOO.md)
-- [Dataset](https://github.com/haotian-liu/LLaVA/blob/main/docs/Data.md)
+- [Dataset Collection](#dataset-collection)
 - [Train](#train)
+- [Hyperparameters](#hyperparameters)
 - [Evaluation](#evaluation)
 
 ## Install
@@ -170,17 +176,13 @@ Model training and inferencing were mainly performed on 2 NVIDIA H100 PCIe GPUs 
 ## Hyperparameters
 We tried to align the hyperparameters of Protein2Text aligned with the set of hyperparameters provided by LLaVA. Both hyperparameters used in pretraining and fine-tuning are provided below.
 
-#### 1. Pretraining  
+### Training Configuration  
 
-| Hyperparameter       | Global Batch Size | Learning Rate | Epochs | Max Length | Weight Decay | Precision | Optimizer | Gradient Accumulation Steps | Warmup Ratio |
-|---------------------|------------------:|--------------:|-------:|-----------:|-------------:|-----------|------------|-----------------------------:|-------------:|
-| Protein2Text       | 256               | 2 × 10⁻³      | 1      | 2048       | 0            | bf16 (Mixed Precision) | AdamW | 1 step | 0.03 |
+| Phase              | Global Batch Size | Learning Rate | Epochs | Max Length | Weight Decay | Precision | Optimizer | Gradient Accumulation Steps | Warmup Ratio |
+|--------------------|------------------:|--------------:|-------:|-----------:|-------------:|-----------|------------|-----------------------------:|-------------:|
+| **Pretraining**   | 256               | 2 × 10⁻³      | 1      | 2048       | 0            | bf16 (Mixed Precision) | AdamW | 1 step | 0.03 |
+| **Fine-tuning**   | 128               | 8 × 10⁻⁶      | 5      | 2048       | 0            | bf16 (Mixed Precision) | AdamW | 1 step | 0.03 |
 
-#### 2. Fine-tuning  
-
-| Hyperparameter       | Global Batch Size | Learning Rate | Epochs | Max Length | Weight Decay | Precision | Optimizer | Gradient Accumulation Steps | Warmup Ratio |
-|---------------------|------------------:|--------------:|-------:|-----------:|-------------:|-----------|------------|-----------------------------:|-------------:|
-| Protein2Text       | 128               | 8 × 10⁻⁶      | 5      | 2048       | 0            | bf16 (Mixed Precision) | AdamW | 1 step | 0.03 |
 
 #### Additional Model Components  
 
@@ -208,9 +210,29 @@ We tried to align the hyperparameters of Protein2Text aligned with the set of hy
   - Number of Latent Tokens: 128  
 
 
-### Download LLaMA 3.1 and ESM 2 checkpoints:
+## Dataset Collection
+
+<div align=center><img src="figures/DataCollectionPipelineH.png" width="100%" height="100%" /></div>
+
+
+
+The **Protein2Text-QA** dataset was created in two main steps: retrieving relevant abstracts and generating question-answer (QA) pairs using **LLaMA3**.  
+
+### 1. Abstract Retrieval  
+Protein-related abstracts were collected using systematic queries in the **PubMed Central (PMC)** database via the **Entrez** library. Abstracts containing specific protein keywords were fetched using their **PMC IDs**, ensuring relevance by including only those explicitly mentioning the queried proteins. The abstracts were preprocessed to remove redundant text and formatting inconsistencies before being passed to the QA generation pipeline.  
+
+### 2. QA Generation with LLaMA3  
+The cleaned abstracts, along with protein names and roles, were input into **LLaMA3.1-8B-Instruct** to generate conversation-style QAs. The model was prompted to create QAs focusing solely on the protein’s function and attributes while ignoring unrelated information. Each abstract produced up to **10 QA pairs**, which were further filtered to remove irrelevant or uninformative responses. The dataset was refined to ensure questions remained general and protein-specific rather than abstract-specific.  
+
+The final dataset includes structured **QA pairs**, covering unique proteins and their associated attributes. The complete data pipeline, including extraction and preprocessing, is outlined in the repository, along with dataset statistics such as the number of QA pairs, unique proteins, and sequence lengths.
+
+
+
+## Download LLaMA 3.1 and ESM 2 checkpoints:
 
 Please refer to the following pages, [LLaMA 3.1 8B](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) and [ESM-2 3B](https://huggingface.co/facebook/esm2_t36_3B_UR50D), for instructions and requirments on how to download the model weights for the base models.
+
+<!-- ## Evaluation -->
 
 <!-- 
 ## Evaluation
