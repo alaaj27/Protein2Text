@@ -64,6 +64,7 @@ Protein2Text has been **rigorously evaluated** using multiple benchmarks and has
     ```
 
 3. Install packages:
+
     3.1. Using conda 
       ```bash
       conda create -n protein2text_env python=3.10 -y
