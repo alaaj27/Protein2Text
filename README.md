@@ -46,6 +46,7 @@ Protein2Text has been **rigorously evaluated** using multiple benchmarks and has
 - [Train](#train)
 - [Hyperparameters](#hyperparameters)
 - [Evaluation](#evaluation)
+- [Citation](#citation)
 
 ## Install
 
