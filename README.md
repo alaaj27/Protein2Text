@@ -17,7 +17,7 @@ Built on an **adapted LLaVA framework** with an advanced **resampling mechanism*
 ✔ **Multimodal Capability**: Interprets protein sequences and generates textual insights.  
 ✔ **LLaVA-Based Architecture**: Integrates a resampling mechanism for improved protein-to-text mapping.  
 ✔ **Curated Training Data**: Derived from **PubMed articles** to enhance domain-specific knowledge.  
-✔ **Comprehensive Benchmarking**: Evaluated on **six rigorous benchmarks**, including in-domain, cross-domain, zero-shot, and classifcation benchmarks.  
+✔ **Comprehensive Benchmarking**: Evaluated on **six rigorous benchmarks**, including in-domain, cross-domain, zero-shot, and classification benchmarks.  
 ✔ **Open-Ended Q&A**: Outperforms existing models in generating informative and relevant protein function insights.  
 ✔ **Publicly Available**: Model weights, evaluation datasets, and evaluation scripts are **fully open-source**.  
 
@@ -50,7 +50,7 @@ Protein2Text has been **rigorously evaluated** using multiple benchmarks and has
 
 ## Install
 
-1. Clone this repository and navigate to Protein2Text folder:
+1. Clone this repository and navigate to the Protein2Text folder:
       ```bash
     git clone https://github.com/alaaj27/Protein2Text.git
     cd Protein2Text
@@ -168,7 +168,7 @@ Please check out our [Model Zoo](https://github.com/haotian-liu/LLaVA/blob/main/
 ## Train
 
 Ptotein2Text training consists of two stages:  
-1. Projector and Resampler Alignment Stage (Pretraining): We collected a dataset spans 394,000 protein amino acid sequences and function descriptions collected from UniProt.  This dataset is entirely used to train the resampler and the projector during the pretraining stage to connect a *frozen pretrained protein encoder* to a *frozen pretrained LLM*.  
+1. Projector and Resampler Alignment Stage (Pretraining): We collected a dataset that spans 394,000 protein amino acid sequences and function descriptions collected from UniProt.  This dataset is entirely used to train the resampler and the projector during the pretraining stage to connect a *frozen pretrained protein encoder* to a *frozen pretrained LLM*.  
 
 2. Sequence Instruction Tuning stage(Fine-tuning): we generate a comprehensive question and answering dataset ( **Protein2Text-QA**) to fine-tune the model parameters. The dataset spans approximately 210,000 pairs of QA. We utilize research carried out on proteins from published articles in the PubMed Central (PMC) database to create questions and answers. Articles mentioning the protein names are located and fed to the LLaMA3.1 model to generate a series of QA pairs, such that they focus only on the protein name given. 
 
@@ -177,7 +177,7 @@ Model training and inferencing were mainly performed on 2 NVIDIA H100 PCIe GPUs 
 
 
 ## Hyperparameters
-We tried to align the hyperparameters of Protein2Text aligned with the set of hyperparameters provided by LLaVA. Both hyperparameters used in pretraining and fine-tuning are provided below.
+We tried to align the hyperparameters of Protein2Text with the set of hyperparameters provided by LLaVA. Both hyperparameters used in pretraining and fine-tuning are provided below.
 
 ### Training Configuration  
 
@@ -233,14 +233,14 @@ The final dataset includes structured **QA pairs**, covering unique proteins and
 
 ## Download LLaMA 3.1 and ESM 2 checkpoints:
 
-Please refer to the following pages, [LLaMA 3.1 8B](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) and [ESM-2 3B](https://huggingface.co/facebook/esm2_t36_3B_UR50D), for instructions and requirments on how to download the model weights for the base models.
+Please refer to the following pages, [LLaMA 3.1 8B](https://huggingface.co/meta-llama/Llama-3.1-8B-Instruct) and [ESM-2 3B](https://huggingface.co/facebook/esm2_t36_3B_UR50D), for instructions and requirements on how to download the model weights for the base models.
 
 <!-- ## Evaluation -->
 
 <!-- 
 ## Evaluation
 
-In LLaVA-1.5, we evaluate models on a diverse set of 12 benchmarks. To ensure the reproducibility, we evaluate the models with greedy decoding. We do not evaluate using beam search to make the inference process consistent with the chat demo of real-time outputs.
+In LLaVA-1.5, we evaluate models on a diverse set of 12 benchmarks. To ensure reproducibility, we evaluate the models with greedy decoding. We do not evaluate using beam search to make the inference process consistent with the chat demo of real-time outputs.
 
 See [Evaluation.md](https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md). -->
 
