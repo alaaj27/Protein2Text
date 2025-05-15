@@ -243,20 +243,20 @@ In LLaVA-1.5, we evaluate models on a diverse set of 12 benchmarks. To ensure th
 
 See [Evaluation.md](https://github.com/haotian-liu/LLaVA/blob/main/docs/Evaluation.md). -->
 
-<!-- 
+
 ## Citation
 
-If you find LLaVA useful for your research and applications, please cite using this BibTeX:
+If you find Protein2Text useful for your research and applications, please cite using this BibTeX:
 ```bibtex
-@misc{liu2024llavanext,
-    title={LLaVA-NeXT: Improved reasoning, OCR, and world knowledge},
-    url={https://llava-vl.github.io/blog/2024-01-30-llava-next/},
-    author={Liu, Haotian and Li, Chunyuan and Li, Yuheng and Li, Bo and Zhang, Yuanhan and Shen, Sheng and Lee, Yong Jae},
-    month={January},
-    year={2024}
+@inproceedings{jararweh2025protein2text,
+  title={Protein2Text: Resampling Mechanism to Translate Protein Sequences into Human-Interpretable Text},
+  author={Jararweh, Ala and Macaulay, Oladimeji and Arredondo, David and Hu, Yue and Tafoya, Luis E and Virupakshappa, Kushal and Sahu, Avinash},
+  booktitle={Proceedings of the 2025 Conference of the Nations of the Americas Chapter of the Association for Computational Linguistics: Human Language Technologies (Volume 3: Industry Track)},
+  pages={918--937},
+  year={2025}
 }
 
-``` -->
+``` 
 <!-- 
 ## Acknowledgement
 
